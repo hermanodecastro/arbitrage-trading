@@ -82,7 +82,7 @@ impl Arbitrage {
         //gets the coinbase order book.
         let coinbase_order_book = self.get_order_book(Exchange::Coinbase).await;
 
-        //gets the last bid and the last ask of binance offer book.
+        //gets the last bid and the last ask of binance order book.
         let (binance_last_bid, binance_last_ask) = std::thread::spawn(move || {
             let bid = binance_order_book
                         .bids
@@ -98,7 +98,7 @@ impl Arbitrage {
         .join()
         .expect("Couldn't get binance bid and ask");
 
-        //gets the last bid and the last ask of coinbase offer book.
+        //gets the last bid and the last ask of coinbase order book.
         let (coinbase_last_bid, coinbase_last_ask) = {
             let bid = coinbase_order_book
                         .bids
