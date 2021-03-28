@@ -59,7 +59,7 @@ impl Arbitrage {
                                             .binance
                                             .order_book(&OrderBookRequest::parse(client, &self.pair))
                                             .await
-                                            .expect("Couldn't get coinbase order book"),
+                                            .expect("Couldn't get binance order book"),
 
             Exchange::Coinbase => self.client
                                             .coinbase.order_book(&OrderBookRequest::parse(client, &self.pair))
