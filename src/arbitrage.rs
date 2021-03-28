@@ -158,7 +158,7 @@ impl Arbitrage {
                     profit
                 );
 
-            //checks whether the bid price on binance is higher than the ask price on coinbase.
+            //checks whether the bid price on coinbase is higher than the ask price on binance.
             } else if self.coinbase_bid > self.binance_ask {
                 let profit = &self.coinbase_bid - &self.binance_ask;
                 println!("{}\nArbitrage opportunity found \nBuy: {} at {} on binance \nSell:  {} at {} on coinbase \nProfit: {}\n", 
