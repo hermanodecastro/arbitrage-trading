@@ -53,6 +53,7 @@ impl Arbitrage {
         }
     }
     
+    //gets the order book
     async fn get_order_book(&self, client: Exchange) -> OrderBookResponse {
         match &client {
             Exchange::Binance => self.client
